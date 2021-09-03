@@ -1,5 +1,6 @@
 import codebug_tether
 import random
+import time
 
 codebug = codebug_tether.CodeBug()
 
@@ -115,16 +116,36 @@ def print_number(number):
         print_zero()
 
 
+def waiting_for_feedback():
+    print('waiting for keypress')
+    while True:
+        button_A = codebug.get_input('A')
+        button_B = codebug.get_input('B')
+        if button_A == 1:
+            print('A')
+            return True
+        if button_B == 1:
+            print('B')
+            return False
+
+
+
 def main():
     numbers = []
     for number in range(0, 10):
         numbers.append(number)
-    # while True:
-    random_number = random.randint(0, 9)
-    if random_number in numbers:
-        print(random_number)
-        print_number(random_number)
-    
+    print(numbers)
+    while True:
+        time.sleep(2)
+        random_number = random.randint(0, 9)
+        if random_number in numbers:
+            print(random_number)
+            print_number(random_number)
+            if waiting_for_feedback():
+                break
+            numbers.remove(random_number)
+    codebug.clear()
+    print('You win!')
 
 
 main()
