@@ -11,9 +11,14 @@
 1. Complex data structures (e.g.: nested lists)
 1. Number systems in practice
 
-# Comming soon
 ## CodeBug III.
 ### Topics
 1. Data sturctures: dictionaries
-1. Display characters / scrolling letters
-1. Improvemen/enhancement of the game logic
+1. Display characters
+
+
+# Comming soon
+## CodeBug IV.
+### Topics
+1. Improvement/enhancement of the game logic
+1. Scrolling letters
